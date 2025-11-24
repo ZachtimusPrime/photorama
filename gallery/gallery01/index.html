@@ -1,20 +1,11 @@
 ---
 layout: page
-title: "album"
-description: "masonry"
+title: "Birmingham, AL"
+description: "Street photography in Birmingham, Alabama"
 active: gallery
 header-img: "img/gallery-bg.jpg"
-album-title: "my 1st album"
-images:
- - image_path: /gallery/archive/g01/bg1.jpg
-   caption: IMAGE TITLE
-   copyright: © photorama
- - image_path: /gallery/archive/g01/bg2.jpg
-   caption: IMAGE TITLE
-   copyright: © photorama
- - image_path: /gallery/archive/g01/bg3.jpg
-   caption: IMAGE TITLE
-   copyright: © photorama
+album-title: "Birmingham, Alabama"
+image_folder: "/img/galleries/birmingham/"
 ---
 
 <html class="no-js" lang="en">
@@ -33,23 +24,26 @@ images:
 			<!-- Gallery __-->
 			<div class="gallery masonry-gallery">
 		
-{% for image in page.images %}  		
+{% assign folder = page.image_folder | default: "/gallery/archive/birmingham/" %}
+{% assign images = site.static_files | where_exp: "f", "f.path contains folder" | sort: "path" %}
 
-				<figure class="gallery-item">
-					<header class='gallery-icon'>
+{% for f in images %}
+			{% assign meta = site.data.birmingham[f.name] %}
+			<figure class="gallery-item">
+				<header class='gallery-icon'>
 
-<a href="{{ site.url }}{{ site.baseurl }}{{ image.image_path }}" class="popup"  title="{{ image.caption }}" data-caption="{{ image.copyright }}">
-<img src="{{ site.url }}{{ site.baseurl }}{{ image.image_path }}"></a>
-						
-					</header>	
-					<figcaption class='gallery-caption'>
-						<div class="entry-summary" id="{{ image.caption }}">
-							<h3>{{image.caption}}</h3>
-							<p>{{image.copyright}}</p>
-						</div>
-					</figcaption>
-				</figure>
-				
+	<a href="{{ site.url }}{{ site.baseurl }}{{ f.path }}" class="popup" title="{{ meta.caption | default: f.name }}" data-caption="{{ meta.copyright | default: '' }}">
+	<img src="{{ site.url }}{{ site.baseurl }}{{ f.path }}"></a>
+
+				</header>	
+				<figcaption class='gallery-caption'>
+					<div class="entry-summary" id="{{ f.name }}">
+						<h3>{{ meta.caption | default: f.name }}</h3>
+						<p>{{ meta.copyright | default: '' }}</p>
+					</div>
+				</figcaption>
+			</figure>
+
 {% endfor %}
 
 			</div>
