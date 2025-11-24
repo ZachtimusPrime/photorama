@@ -1,10 +1,12 @@
 ---
 layout: home
-main-title: "Cat Dad
-Software Engineer
-Hobbyist Photographer"
-subtitle: "“The pictures are there, and you just take them.”
-– Robert Capa"
+main-title: |
+  Cat Dad
+  Software Engineer
+  Hobbyist Photographer
+subtitle: |
+  “The pictures are there, and you just take them.”
+  – Robert Capa
 description: "See life through my lens"
 images:
  - image_path: /img/slider/home01.jpg
@@ -46,8 +48,8 @@ images:
 			<!-- WYSIWYG -->
 
 		<div class="position-absolute">
-				<h2 class="big no-margin"><strong>{{ page.main-title }}</strong></h2>
-				<h2>{{ page.subtitle }}</h2> 
+				<h2 class="big no-margin"><strong>{{ page.main-title | newline_to_br }}</strong></h2>
+				<h2>{{ page.subtitle | newline_to_br }}</h2> 
                      <div class="entry-summary">
 							<p>{{ page.description }}</p>
 						</div><br />
