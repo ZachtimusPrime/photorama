@@ -9,6 +9,12 @@ images:
    gallery-folder: /gallery/birmingham/
    gallery-name: Birmingham, Alabama
    gallery-date: November 2025
+ - image_path: /gallery/albums/aurora/DSC06317.jpg
+   gallery-folder: /gallery/aurora/
+   gallery-name: |
+     Aurora
+     Nashville, Tennessee
+   gallery-date: November 2025
  - image_path: /gallery/albums/gaming/DSC06631_BW.jpg
    gallery-folder: /gallery/gaming/
    gallery-name: Gaming
@@ -44,7 +50,7 @@ images:
 					</header>	
 					<figcaption class='gallery-caption'>
 						<div class="entry-summary">
-							<h3>{{image.gallery-name}}</h3>
+							<h3>{{image.gallery-name | newline_to_br }}</h3>
 							<p>{{image.gallery-date}}</p>
 						</div>
 					</figcaption>
