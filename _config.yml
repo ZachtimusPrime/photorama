@@ -34,7 +34,7 @@ comments :
 # Internal nav
 nav:
   - GALLERY: "https://ZachtimusPrime.github.io/photorama/gallery/"  
-  - JOURNAL: "https://ZachtimusPrime.github.io/photorama/journal/"
+  # - JOURNAL: "https://ZachtimusPrime.github.io/photorama/journal/"
   - ABOUT: "https://ZachtimusPrime.github.io/photorama/about/"
 
 # All translation keys
