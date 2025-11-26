@@ -1,11 +1,11 @@
 ---
 layout: page
-title: "Japan"
-description: "October 2024"
+title: "Vancouver, B.C."
+description: "August 2025"
 active: gallery
 header-img: "img/gallery-bg.jpg"
-album-title: "Japan 2024"
-image_folder: "/gallery/archive/japan/2024/"
+album-title: "Vancouver 2025"
+image_folder: "/gallery/archive/vancouver/"
 ---
 
 <html class="no-js" lang="en">
@@ -24,7 +24,7 @@ image_folder: "/gallery/archive/japan/2024/"
 			<!-- Gallery __-->
 			<div class="gallery masonry-gallery">
 		
-{% assign folder = page.image_folder | default: "/gallery/archive/japan/2024/" %}
+{% assign folder = page.image_folder | default: "/gallery/archive/vancouver/" %}
 {% assign images = site.static_files | where_exp: "f", "f.path contains folder" | sort: "path" %}
 
 {% for f in images %}
